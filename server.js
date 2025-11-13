@@ -15,7 +15,7 @@ app.post("/sample",(req,res) => {
         res.status(200).json({
             status:"succesful"
         })
-    }
+    }else res.send(400);
 })
 
 app.listen(port,() => {
