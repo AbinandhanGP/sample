@@ -6,8 +6,16 @@ dotenv.config();
 const port = process.env.PORT;
 const app = express();
 
+app.use(express.json());
+
 app.post("/sample",(req,res) => {
-    res.send(200);
+    const name = req.body.name;
+    const password = req.body.password;
+    if(password == "abc") {
+        res.status(200).json({
+            status:"succesful"
+        })
+    }
 })
 
 app.listen(port,() => {
